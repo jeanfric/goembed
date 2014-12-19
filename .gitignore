@@ -1,0 +1,4 @@
+cmd/goembed/goembed
+cmd/goembedtest/goembedtest
+cmd/goembedtest/assets.generated.go
+embedtesting/assets.generated.go
