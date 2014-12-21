@@ -60,6 +60,11 @@
 //		package of the generated source file (if $GOPACKAGE is
 //		set, such as when using 'go generate', $GOPACKAGE
 //		takes precedence)
+//
+// See also: package github.com/jeanfric/embedfs implements an
+// http.FileSystem backed by a map[string]string, compatible directly
+// with the map returned by loadAssets.  See
+// https://github.com/jeanfric/embedfs for more information.
 package main
 
 import (
@@ -98,6 +103,8 @@ assets in a program binary.  For example, to embed all files under the
 
 	$ go generate
 	$ go build
+
+See also: https://github.com/jeanfric/embedfs.
 
 Goembed flags:
 `
