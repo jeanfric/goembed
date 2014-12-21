@@ -1,6 +1,6 @@
-// Package embed implements common asset embedder patterns that can
+// Package goembed implements common asset embedder patterns that can
 // be used by concrete asset embedder implementations.
-package embed
+package goembed
 
 import (
 	"bytes"
@@ -10,7 +10,7 @@ import (
 	"path/filepath"
 	"text/template"
 
-	"github.com/jeanfric/embed/countingwriter"
+	"github.com/jeanfric/goembed/countingwriter"
 )
 
 // An Asset represents a named piece of data, typically the contents

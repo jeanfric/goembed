@@ -73,12 +73,12 @@ import (
 	"os"
 	"runtime"
 
-	"github.com/jeanfric/embed"
-	"github.com/jeanfric/embed/base64embedder"
-	"github.com/jeanfric/embed/hexembedder"
-	"github.com/jeanfric/embed/quoteembedder"
-	"github.com/jeanfric/embed/zbase64embedder"
-	"github.com/jeanfric/embed/zhexembedder"
+	"github.com/jeanfric/goembed"
+	"github.com/jeanfric/goembed/base64embedder"
+	"github.com/jeanfric/goembed/hexembedder"
+	"github.com/jeanfric/goembed/quoteembedder"
+	"github.com/jeanfric/goembed/zbase64embedder"
+	"github.com/jeanfric/goembed/zhexembedder"
 )
 
 func usage() {
@@ -146,13 +146,13 @@ func main() {
 		os.Exit(1)
 	}
 
-	assets, err := embed.FindAssets(srcPath)
+	assets, err := goembed.FindAssets(srcPath)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "%v\n", err)
 		os.Exit(1)
 	}
 
-	var ae embed.AssetEmbedder
+	var ae goembed.AssetEmbedder
 
 	switch embedder {
 	case "zbase64":

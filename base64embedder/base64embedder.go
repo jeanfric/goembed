@@ -7,7 +7,7 @@ import (
 	"io"
 	"io/ioutil"
 
-	"github.com/jeanfric/embed"
+	"github.com/jeanfric/goembed"
 )
 
 var (
@@ -33,11 +33,11 @@ func encode(contents io.Reader) (string, error) {
 }
 
 // NewSequential creates a new sequential base64embedder asset embedder.
-func NewSequential() embed.AssetEmbedder {
-	return embed.NewSequentialEmbedder(encode, decode, imports[:])
+func NewSequential() goembed.AssetEmbedder {
+	return goembed.NewSequentialEmbedder(encode, decode, imports[:])
 }
 
 // NewConcurrent creates a new concurrent base64embedder asset embedder.
-func NewConcurrent() embed.AssetEmbedder {
-	return embed.NewConcurrentEmbedder(encode, decode, imports[:])
+func NewConcurrent() goembed.AssetEmbedder {
+	return goembed.NewConcurrentEmbedder(encode, decode, imports[:])
 }

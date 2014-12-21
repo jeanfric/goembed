@@ -3,7 +3,7 @@ package hexembedder
 import (
 	"testing"
 
-	"github.com/jeanfric/embed/embedtesting"
+	"github.com/jeanfric/goembed/embedtesting"
 )
 
 func BenchmarkSequentialEmbedder(b *testing.B) {

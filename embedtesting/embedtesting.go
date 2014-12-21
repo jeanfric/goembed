@@ -7,7 +7,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/jeanfric/embed"
+	"github.com/jeanfric/goembed"
 )
 
 var (
@@ -22,11 +22,11 @@ func init() {
 	}
 }
 
-func GetTestAssets() []*embed.Asset {
+func GetTestAssets() []*goembed.Asset {
 	return AssetsFromMap(testAssets)
 }
 
-func GetBenchAssets() []*embed.Asset {
+func GetBenchAssets() []*goembed.Asset {
 	benchAssets := make(map[string]string)
 
 	// Amplify the size of the test data
@@ -39,10 +39,10 @@ func GetBenchAssets() []*embed.Asset {
 	return AssetsFromMap(benchAssets)
 }
 
-func AssetsFromMap(m map[string]string) []*embed.Asset {
-	assetList := make([]*embed.Asset, 0, 0)
+func AssetsFromMap(m map[string]string) []*goembed.Asset {
+	assetList := make([]*goembed.Asset, 0, 0)
 	for k, v := range m {
-		assetList = append(assetList, &embed.Asset{
+		assetList = append(assetList, &goembed.Asset{
 			Reader: strings.NewReader(v),
 			Key:    k,
 		})
@@ -50,7 +50,7 @@ func AssetsFromMap(m map[string]string) []*embed.Asset {
 	return assetList
 }
 
-func BenchmarkEmbedder(b *testing.B, ae embed.AssetEmbedder) {
+func BenchmarkEmbedder(b *testing.B, ae goembed.AssetEmbedder) {
 	assets := GetBenchAssets()
 	var totBytes int64 = 0
 
