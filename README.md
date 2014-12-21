@@ -1,7 +1,8 @@
 goembed
 =======
 
-goembed is a static asset embedder to use with `go generate`.
+goembed is a static asset embedder to use with `go generate`,
+introduced in Go 1.4 (https://blog.golang.org/go1.4).
 
 For more information about the `goembed` command, see
 http://godoc.org/github.com/jeanfric/goembed/cmd/goembed.
