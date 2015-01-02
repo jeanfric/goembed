@@ -55,7 +55,7 @@
 //	-func="loadAssets"
 //		name of loading function
 //	-o="assets.generated.go"
-//		 name of generated file
+//		name of generated file
 //	-package="main"
 //		package of the generated source file (if $GOPACKAGE is
 //		set, such as when using 'go generate', $GOPACKAGE
