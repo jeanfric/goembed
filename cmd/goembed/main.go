@@ -1,4 +1,4 @@
-// Goembed generates a file named 'assets.generated.go' containing an
+// Goembed generates a file named "assets.generated.go" containing an
 // encoded version of the contents of a directory.
 //
 // The generated source code has no external import dependencies; it
@@ -9,25 +9,25 @@
 //
 // 	func loadAssets() (map[string]string, error)
 //
-// Given this 'testdata' directory:
+// Given this "testdata" directory:
 //
 //	testdata/
 //	|- index.html
 //	`- img
 //	   `gopher.png
 //
-// Then, after running 'goembed testdata' and compiling the package,
+// Then, after running "goembed testdata" and compiling the package,
 // calling loadAssets will return a map like the following:
 //
-//	m['/index.html'] = "<html><head>..."
-//	m['/img/gopher.png'] = "\x89PNG\r\n\x1a\n..."
+//	m["/index.html"] = "<html><head>..."
+//	m["/img/gopher.png"] = "\x89PNG\r\n\x1a\n..."
 //
-// The paths will all begin at '/' and use forward slashes ('/') as
+// The paths will all begin at "/" and use forward slashes ("/") as
 // path separators.
 //
-// Goembed is useful in combination with 'go generate' to bundle static
+// Goembed is useful in combination with "go generate" to bundle static
 // assets in a program binary.  For example, to embed all files under the
-// 'static' directory:
+// "static" directory:
 //
 // 	package main
 // 	//go:generate embed static
@@ -58,7 +58,7 @@
 //		name of generated file
 //	-package="main"
 //		package of the generated source file (if $GOPACKAGE is
-//		set, such as when using 'go generate', $GOPACKAGE
+//		set, such as when using "go generate", $GOPACKAGE
 //		takes precedence)
 //
 // See also: package github.com/jeanfric/embedfs implements an
@@ -85,7 +85,7 @@ func usage() {
 	details := `
 usage: goembed [-package p] [-func f] [-o output] directory
 
-Goembed generates a file named 'assets.generated.go' containing an
+Goembed generates a file named "assets.generated.go" containing an
 encoded version of the contents of the specified directory.
 
 The generated file contains a function that loads and returns the
@@ -93,9 +93,9 @@ embedded assets, with the following signature:
 
 	func loadAssets() (map[string]string, error)
 
-Goembed is useful in combination with 'go generate' to bundle static
+Goembed is useful in combination with "go generate" to bundle static
 assets in a program binary.  For example, to embed all files under the
-'static' directory:
+"static" directory:
 
 	package main
 	//go:generate goembed static
@@ -119,7 +119,7 @@ func main() {
 
 	var destFile, packageName, fnName, embedder string
 	var concurrent bool
-	flag.StringVar(&packageName, "package", "main", "package of the generated source file (if $GOPACKAGE is set, such as when using 'go generate', $GOPACKAGE takes precedence)")
+	flag.StringVar(&packageName, "package", "main", "package of the generated source file (if $GOPACKAGE is set, such as when using \"go generate\", $GOPACKAGE takes precedence)")
 	flag.StringVar(&fnName, "func", "loadAssets", "name of loading function")
 	flag.StringVar(&destFile, "o", "assets.generated.go", "name of generated file")
 	flag.StringVar(&embedder, "e", "quote", "embedding algorithm")
@@ -186,7 +186,7 @@ func main() {
 			ae = quoteembedder.NewSequential()
 		}
 	default:
-		fmt.Fprintf(os.Stderr, "unknown embedding algorithm '%s'\n", embedder)
+		fmt.Fprintf(os.Stderr, "unknown embedding algorithm \"%s\"\n", embedder)
 		os.Exit(1)
 	}
 

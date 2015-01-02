@@ -75,10 +75,10 @@ func main() {
 		assetData := []byte(assets["/"+filepath.ToSlash(relPath)])
 
 		if bytes.Compare(fileData, assetData) != 0 {
-			results = append(results, fmt.Sprintf("fail\t'%v' (%v bytes) != asset['%v'] (%v bytes)", path, len(fileData), relPath, len(assetData)))
+			results = append(results, fmt.Sprintf("fail\t\"%v\" (%v bytes) != asset[\"%v\"] (%v bytes)", path, len(fileData), relPath, len(assetData)))
 			fail = true
 		} else {
-			results = append(results, fmt.Sprintf("ok\t'%v' == asset['%v'] (%v bytes)", path, relPath, len(assetData)))
+			results = append(results, fmt.Sprintf("ok\t\"%v\" == asset[\"%v\"] (%v bytes)", path, relPath, len(assetData)))
 		}
 
 		return nil

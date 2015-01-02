@@ -14,8 +14,8 @@ import (
 )
 
 // An Asset represents a named piece of data, typically the contents
-// of a file identified by its path (beginning with a '/', and using
-// forward slashes ('/') as path separators).
+// of a file identified by its path (beginning with a "/", and using
+// forward slashes ("/") as path separators).
 type Asset struct {
 	io.Reader
 	Key string
@@ -61,7 +61,7 @@ type generatedFileData struct {
 
 // FindAssets walks a directory recursively and generates a list of
 // embeddable assets that can be embedded using an AssetEmbedder.  The
-// Key of each asset will start with a forward slash ('/'), and use
+// Key of each asset will start with a forward slash ("/"), and use
 // slashes as path separators.
 func FindAssets(rootPath string) ([]*Asset, error) {
 	assetList := make([]*Asset, 0, 0)
